@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Admin Form</title>
+    <!-- <link
+      <!-- rel="shortcut icon"
+      type="image/x-icon"
+      href="https://d2xamzlzrdbdbn.cloudfront.net/images/fevicon.ico"
+    /> --> 
+    <style>
+      body{
+        background-image: ;
+      }
+        div.main{
+        width: 400px;
+        margin: 60px auto 0px auto;
+       }
+       h1{
+        text-align: center;
+        padding: 10px;
+        
+        color: rgb(251, 249, 249);
+       }
+       div.reg{
+        width: 100%;
+        font-size: 18px;
+        border-radius: 10px;
+        background-color: teal;
+
+        box-shadow: 2px 2px 15px rgba(0,0,0,0.3);
+        color: #fff;
+       }
+       form{
+        margin: 30px;
+       }
+       label{
+        font-family: sans-serif;
+        font-size: 18px;
+        font-style: italic;
+       }
+       input#category,#img,#name,#Price,#oldPrice,#offer{
+        width: 300px;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        padding: 7px;
+        background-color: #fff;
+        box-shadow: inset 1px 1px 5px rgba(0,0,0,0.3);
+
+       }
+       input#submit{
+        width: 200px;
+        padding: 7px;
+        font-size: 16px;
+        font-family: sans-serif;
+        font-weight: 600;
+        border: none;
+        border-radius: 3px;
+        background-color: rgb(224, 128, 19);
+        color: white;
+        cursor: pointer;
+        margin-bottom: 10px;
+        margin-left: 50px;
+       }
+       #category,#category>option{
+        margin-bottom: 10px;
+        width: 300px;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        padding: 7px;
+        background-color: #fff;
+        box-shadow: inset 1px 1px 5px rgba(0,0,0,0.3);
+       }
+       table{
+        width: 80%;
+        margin: auto;
+      }
+      tr>th{
+        background-color: teal;
+        width: 30px;
+        height: 50px;
+      }
+      tr>th{
+        font-weight: bold;
+        font-size: larger;
+        color: white;
+      }
+      td{
+        text-align: center;
+        font-size: larger;
+        height: 50px;
+        font-weight: bold;
+      }
+      delet{
+        background-color: red;
+      }
+       
+
+    </style>
+</head>
+<body>
+
+    <div class="main">
+        <div class="reg">
+            
+                <h1>Add Product in Inventory</h1>
+        <form action="">
+          <input type="" id="img" placeholder="Product image URL"><br><br>
+            <input type="text" id="name" placeholder="Product name"><br><br>
+            <select name="" id="category">
+                <option value="">Select category here</option>
+                <option value="mobile">mobile</option>
+                <option value="men">men</option>
+                <option value="women">women</option>
+                <option value="general">general</option>
+                <br><br>
+            </select><br>
+           
+           
+            <input type="text" id="Price" placeholder="Type price here"><br><br>
+           
+            <input type="text" id="offer" placeholder="Type discount here"><br><br>
+            <input type="submit" id="submit" value="Add Inventory">
+        </form>
+           
+        </div>
+        
+    </div>
+    <table>
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Product Name</th>
+        <th>Category</th>
+       
+        <th>Price</th>
+        <!-- <th>Delivered By</th> -->
+        <th>Discount</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Here you will append the data as tr-td when the form gets submitted  -->
+    </tbody>
+  </table>
+   
+</body>
+</html>
+<script>
+    let form=document.querySelector('form');
+
+let form_data=JSON.parse(localStorage.getItem("addedItems"))||[];
+
+
+form.addEventListener('submit',function(event){
+  event.preventDefault();
+  
+
+  let obj={
+
+    image:form.img.value,
+    name:form.name.value,
+    category:form.category.value,
+    price:form.Price.value,
+    offers:form.offer.value
+   
+    
+    
+    
+  };
+  if(
+    obj.name==""||
+    obj.category==""||
+    obj.image==""||
+    obj.price==""||
+    obj.offers==""
+    
+  
+  ){
+    alert("Please fill all the details")
+  }else{
+    form_data.push(obj)
+    localStorage.setItem("addedItems",JSON.stringify(form_data))
+   
+    displayTable(form_data);
+    form.reset()
+    alert("Successfully Added")
+   
+  }
+});
+
+
+function displayTable(data){
+  let tbody=document.querySelector("tbody");
+  tbody.innerHTML=null;
+  
+
+  data.forEach(function(ele,index){
+    let tr=document.createElement('tr');
+
+    let img=document.createElement('td');
+    let img2=document.createElement("img");
+    img2.src=ele.image;
+    img2.style.width="50%"
+    img2.style.borderRadius="50px"
+
+    let name=document.createElement('td');
+    name.innerText=ele.name;
+
+    let category=document.createElement('td');
+    category.innerText=ele.category;
+
+    
+
+    let price=document.createElement('td');
+    price.innerText=ele.price;
+
+    let offer=document.createElement('td');
+    offer.innerText=ele.offers;
+      
+
+    let btn=document.createElement('td');
+    btn.innerText="Delete"
+    btn.addEventListener("click",function(){
+      form_data.splice(index,1);
+      localStorage.setItem("addedItems",JSON.stringify(form_data))
+      // window.location.reload()
+      displayTable(form_data)
+      // deleteData(index);
+    })
+    btn.style.cursor="pointer"
+
+    
+
+    
+
+    
+      img.append(img2)
+    tr.append(img,name,category,price,offer,btn);
+    tbody.append(tr)
+
+
+  })
+ 
+}
+// displayTable(form_data)
+
+// function deleteData(index){
+//   form_data=form_data.filter((ele,i)=>{
+//     return i!==index
+
+//   })
+//   displayTable(form_data);
+// }
+</script>
+
+    <!-- // let database=[];
+    // let mobilesData=JSON.parse(localStorage.getItem("mobilesData"))||[];
+    // let menData=JSON.parse(localStorage.getItem("menData"))||[];
+    // let womenData=JSON.parse(localStorage.getItem("womenData"))||[];
+    // let generalData=JSON.parse(localStorage.getItem("generalData"))||[];
+    // document.querySelector("#form").addEventListener("submit",storeData);
+    // function storeData(event){
+    //     event.preventDefault();
+    //     let obj={
+    //         category:category.value,
+    //         img:img.value,
+    //         feature:feature.value,
+    //         newPrice:newPrice.value,
+    //         oldPrice:oldPrice.value,
+    //         offer:offer.value
+    //     }
+    //   console.log(obj.category);
+    //     if(obj.category=="mobile"){
+    //         mobilesData.push(obj);
+    //         localStorage.setItem("mobilesData",JSON.stringify(mobilesData));
+    //       }else if(obj.category=="mens"){
+    //         laptopsData.push(obj);
+    //         localStorage.setItem("menData",JSON.stringify(laptopsData));
+    //     }else if(obj.category=="women"){
+    //         televisionsData.push(obj);
+    //         localStorage.setItem("womenData",JSON.stringify(televisionsData));
+    //     }else  if(obj.category=="general"){
+    //         generalData.push(obj);
+    //         localStorage.setItem("generalData",JSON.stringify(generalData))
+    //     }
+    //         let database={
+    //       mobilesData:mobilesData,
+    //       menData:laptopsData,
+    //       womenData:televisionsData,
+    //       generalData:generalData
+    //    }
+    //    localStorage.setItem("database",JSON.stringify(database));
+    //    console.log("database:-------",database);
+    //     } -->

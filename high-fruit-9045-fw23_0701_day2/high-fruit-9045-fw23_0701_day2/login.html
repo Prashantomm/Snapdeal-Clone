@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sign up Page</title>
+  <style>
+     
+    #signup{
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        width: 50%;
+        height: 450px;
+        display: flex;
+        align-items: center;
+        /* padding-top: 5%;
+        padding-bottom: 8%; */
+        
+        background-image: url("images/saint-elias-mountains-1280x720-kaskawulsh-glacier-kluane-national-23930.jpg");
+
+    }
+    #form{
+
+        margin-top: 50px;
+    }
+    .new{
+      background-color: rgba(255, 255, 255, 0.5);
+      height: 100%;
+      width:100% ;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 15%;
+      
+    }
+    .nav{
+        display: flex;
+        font-size: 30px;
+        justify-content: space-evenly;
+    }
+    .nav button{
+      height: 40px;
+      width: 80px;
+      border-radius: 10px;
+      font-size: 20px;
+    }
+    .nav button:hover{
+      background-color: green;
+      color: aliceblue;
+    }
+  
+      /* Write all necessery css here  */
+  </style>
+</head>
+
+<body>
+  <center>
+  <div class="nav">
+    <a href="./login.html"><button style="border: none;">Login</button> </a>
+    <a href="./signup.html"><button style="border: none;">Signup  </button> </a>
+  </div><br><br><br>
+  <div id="signup">
+    <div class="new">
+    <h1>Please Enter Your Details</h1>
+    <form id="form">
+      User name:
+      <input type="text" id="name" placeholder="enter your name"><br><br><br>
+      User email:
+      <input type="email" id="email" placeholder="enter your email"><br><br><br>
+      User password:
+      <input type="password"  id="password" placeholder="enter your password"><br><br><br>
+      <input type="submit" value="Submit" onclick="showme()"  style="height: 30px; width: 80px; border-radius: 10px; border: 1px solid grey; font-size: 15px; background-color: black; color: aliceblue; font-weight: bold;" />
+    </form>
+  </div>
+  </center>
+  </div>
+</body>
+ <script>
+ //let form=document.getElementById("form")
+//let heading=document.getElementsByTagName("h1")
+//function showme() {
+  //alert("Signin Successful")
+  //window.location.href="./login.html"
+//}
+
+
+
+//let arr=JSON.parse(localStorage.getItem("account-data"))||[];
+//form.addEventListener("submit",(event)=>{
+  //event.preventDefault();
+ // heading.innerText="Signup Successful"
+  //let details={
+    //name:form.name.value,
+    //email:form.email.value,
+    //password:form.password.value,
+  //}
+ 
+ 
+ // arr.push(details)
+    
+ 
+  //localStorage.setItem("account-data",JSON.stringify(arr))
+//})
+//    </script>
+<script src="./signup.js"></script>
+</html>
