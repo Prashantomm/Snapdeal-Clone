@@ -1,19 +1,15 @@
 # high-fruit-9045
-# plucky-scent-2586
-<img src="https://github.com/Prashantomm/high-fruit-9045/assets/112774297/043553b3-980b-4ac6-bc3d-91a04db28a8e" width="200" height="200">
+
+<img src="https://github.com/Prashantomm/high-fruit-9045/assets/112774297/043553b3-980b-4ac6-bc3d-91a04db28a8e" width="100%" height="200">
  
+# Snapdeal-Clone
 
-![snapdeal](https://github.com/Prashantomm/high-fruit-9045/assets/112774297/043553b3-980b-4ac6-bc3d-91a04db28a8e)
+> Snapdeal is India's leading pure-play value Ecommerce platform. Founded in 2010 by Kunal Bahl and Rohit Bansal, Snapdeal is one of the top four online ....
+
+> It is group project, team of five members. 
 
 
-
-# Bus Ticket Reservation System
-
-> A bus ticket reservation system is an java application designed to provide customers with a personalized easy-to-utilize user experience for booking and purchasing tickets online. It stores customers' personal data records, scheduled routes, frequent trips, drop points, and other information.
-
-> Bus ticket reservation system is a console based application.
-
-> Build Bus ticket reservation system application during the construct week at [Masai School](https://masaischool.com/). Completed the project within five days.
+> Build Snapdeal Website during the construct week at [Masai School](https://masaischool.com/). Completed the project within five days.
 
 
 
