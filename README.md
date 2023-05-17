@@ -13,7 +13,7 @@
 
 
 
-# 👉 [Click here](https://drive.google.com/file/d/1c7ORoZkIzOF_QbLrMEMDn1Nzp6083JsD/view?usp=share_link) to go through detail explanation of this application 
+# 👉 [Click here](https://prashantomm.github.io/high-fruit-9045/) to go through detail explanation of this application 
 
 # Features
 
