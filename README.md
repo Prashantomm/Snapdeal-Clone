@@ -13,7 +13,7 @@
 
 
 
-# 👉 [Click here](https://prashantomm.github.io/high-fruit-9045/) to go through live of this application 
+# 👉 [By Clicking here](https://prashantomm.github.io/high-fruit-9045/) you can see the live project. 
 
 # Features
 
